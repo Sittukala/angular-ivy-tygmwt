@@ -1,0 +1,104 @@
+<article class="app-container">
+  <h1>Help</h1>
+  <section>
+    <h3>Introduction</h3>
+    <p>
+      Thank you for your interest in a role at Ito World, we’re really looking
+      forward to finding out more about you and seeing how you could be part of
+      our team of talented engineers.
+    </p>
+    <p>
+      This exercise gives us the opportunity to see how you approach a software
+      engineering problem and your knowledge of HTML, CSS, Angular, Typescript
+      and RxJS. Unlike a timed test, there are no constraints on how long you
+      spend on the implementation but we’d suggest no more than two hours.
+    </p>
+    <p>
+      When you produce your solution, please consider not just the functionality
+      and styling, but also what you would do to ensure your implementation is
+      robust, maintainable and free of memory leaks.
+    </p>
+    <p>
+      Before you start please Fork the stackblitz project and when you are ready
+      to submit please share your stackblitz link with us.
+    </p>
+    <p>
+      <strong
+        >Please note: You will need a GitHub account to save your work</strong
+      >
+    </p>
+    <p>We hope you enjoy the exercise and find it interesting!</p>
+  </section>
+  <hr />
+  <section>
+    <h3>Aim</h3>
+    <p>
+      The aim of this exercise is to create a login page so that users can
+      authenticate and view a dashboard.
+    </p>
+  </section>
+  <hr />
+  <section>
+    <h3>Objectives</h3>
+
+    <h4>Primary objectives</h4>
+    <ul>
+      <li>
+        Create a login form that has an email input, a password input and a
+        submit button. Use the <code>LoginComponent</code> for this.
+      </li>
+      <li>On successful login the user is redirected to the dashboard page.</li>
+      <li>
+        The <code>/dashboard</code> route must only be accesible to
+        authenticated users.
+      </li>
+    </ul>
+    <h4>Secondary objectives</h4>
+    <ul>
+      <li>The login page should be styled similar to the image provided.</li>
+      <li>The email field should have a required validator.</li>
+      <li>The email field should have a valid email format validator.</li>
+      <li>The password field should have a required validator.</li>
+      <li>
+        If an incorrect email and password combination is entered an error
+        message should be displayed on submit.
+      </li>
+      <li>
+        If am logged in the <code>/login</code> route should redirect to the
+        dashboard.
+      </li>
+      <li>Dispay the user's details on the dashboard in any way you like.</li>
+    </ul>
+  </section>
+  <hr />
+  <section>
+    <h3>Hints</h3>
+    <ul>
+      <li>
+        Focus on completing the primary objectives first before moving onto the
+        secondary ones.
+      </li>
+      <li>
+        Use the <code>AuthenticationService</code> to hold the state of your
+        logged in user. You will need to implement the
+        <code>login()</code> method here.
+      </li>
+      <li>
+        An <code>AuthGuard</code> has already been set on the
+        <code>/dashboard</code> route, but you will need to implement the
+        <code>canActive()</code> method.
+      </li>
+      <li>
+        The <code>ApiService</code> provides a fake endpoint to authenticate a
+        user, so you don't need to worry about cookies or storing tokens in
+        local storage or anything.
+      </li>
+      <li>
+        The <code>login()</code> method in <code>ApiService</code> will return a
+        <code>User</code> if the email and password match those stored in
+        <code>usersDb</code>. So you can test your login form using the email
+        and password of the user defined there.
+      </li>
+    </ul>
+  </section>
+</article>

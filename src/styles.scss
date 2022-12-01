@@ -1,0 +1,139 @@
+/* Add application styles & imports to this file! */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700');
+
+:root {
+  --c-background-light: #efefef;
+  --c-background-dark: #271448;
+  --c-ink-onlight: #1f1e1f;
+  --c-ink-ondark: #efefef;
+  --c-ink-onprimary: #1f1e1f;
+  --c-focussed-default: #00c2b8;
+  --c-action-primary-default: #00c2b8;
+  --c-action-primary-hovered: #1cd9cf;
+  --c-action-primary-pressed: #009991;
+  --c-action-primary-disabled: #00c2b881;
+  --c-border-default: #afbbba;
+  --c-border-critical: #d72d3b;
+  --f-default: 'Open Sans';
+}
+
+body {
+  margin: 0;
+  background-color: var(--c-background-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+body {
+  font-family: var(--f-default);
+  color: var(--c-ink-onlight);
+}
+
+li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+code {
+  color: rgb(255, 30, 142);
+  background-color: rgb(233, 233, 233);
+  padding: 2px;
+  border-radius: 4px;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+// Buttons
+.ito-btn {
+  align-items: center;
+  border-radius: 999em;
+  appearance: none;
+  border: 0;
+  font-family: var(--f-default);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding: 8px 15px;
+  &:hover {
+    text-decoration: none;
+  }
+  &:active {
+    transition: none;
+  }
+  &:focus {
+    outline: 1px solid var(--c-focussed-default);
+    outline-offset: 1px;
+  }
+  &:disabled {
+    pointer-events: none;
+  }
+  &--primary {
+    background: var(--c-action-primary-default);
+    color: var(--c-ink-onprimary);
+    &:hover {
+      color: var(--c-ink-onprimary);
+      background: var(--c-action-primary-hovered);
+    }
+    &:active {
+      color: var(--c-ink-onprimary);
+      background: var(--c-action-primary-pressed);
+    }
+    &:focus {
+      color: var(--c-ink-onprimary);
+    }
+    &:disabled {
+      background: var(--c-action-primary-disabled);
+    }
+  }
+}
+
+// Inputs
+.ito-input {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 8px 15px;
+  border: 1px solid var(--c-border-default);
+  border-radius: 999em;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-family: var(--f-default);
+  color: var(--c-ink-onlight);
+  &:focus {
+    outline: none;
+    border-color: var(--c-focussed-default);
+    box-shadow: 0px 0px 2px 0px var(--c-action-primary-hovered);
+  }
+  &--error {
+    border-color: var(--c-border-critical);
+    &:focus {
+      border-color: var(--c-border-critical);
+      box-shadow: 0px 0px 2px 0px var(--c-border-critical);
+    }
+  }
+}
+
+// Labels
+.ito-label {
+  display: block;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: var(--f-default);
+  color: var(--c-ink-onlight);
+  margin-top: 0.5rem;
+}
+
+.app-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}

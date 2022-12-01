@@ -1,0 +1,44 @@
+<section class="app-container">
+<div class="wrapper">
+<div class="left">
+    <img src="https://a4-images.myspacecdn.com/images03/2/85a286a4bbe84b56a6d57b1e5bd03ef4/300x300.jpg" alt="user" width="100">
+    <h4>{{user.firstName}}</h4>
+</div>
+    <div class="right"> 
+    <div class="info">
+        <h3>Information</h3>
+        <div class="info_data">
+             <div class="data">
+                <h4>FirstName</h4>
+                <br/>
+                <p>{{user.firstName}}</p>
+             </div>
+             <div class="data">
+               <h4>LastName</h4>
+               <br/>
+                <p>{{user.lastName}}</p>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="info_data">
+       
+           <h4>Email</h4>
+           <br/>
+           <p>{{user.email}}</p>
+     
+        </div>
+        <br/> <br/>
+        <div class="info_data">
+
+        
+          <h4>LastLogin</h4>
+          <br/>
+        <p style="padding-left:16px">{{user.lastLogin | date:'short':'GMT'}}</p>
+ 
+   </div>
+    </div>
+</div>
+</div>
+</section>
+      

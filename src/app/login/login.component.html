@@ -1,0 +1,72 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <div><label for="emailInput" class="email"> Email </label></div>
+      <input
+        type="email"
+        class="form-control"
+        [class.error]="
+          getForm.email.touched &&
+          (getForm.email.errors?.email || getForm.email.errors?.required)
+        "
+        formControlName="email"
+        placeholder="Enter email"
+        required
+      />
+
+      <div>
+        <small
+          class="form-text errorcode"
+          *ngIf="
+            getForm.email.touched &&
+            getForm.email.errors?.required &&
+            !submitted
+          "
+        >
+          Please enter a valid email address
+        </small>
+
+        <small
+          class="form-text errorcode"
+          *ngIf="getForm.email.touched && getForm.email.errors?.email"
+        >
+          Email address not proper!
+        </small> 
+        <small
+          class="form-text errorcode"
+          *ngIf="submitted && getForm.email.errors?.required"
+        >
+        {{getForm.email.errors.message}}
+        </small> 
+      </div>
+    </div>
+    <br />
+    <div class="form-group">
+      <div><label for="passwordInput" class="password">Password</label></div>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        placeholder="Password"
+        [class.error]="
+          getForm.password.touched && getForm.password.errors?.required
+        "
+        required
+      />
+
+      <div>
+        <small
+          class="form-text errorcode"
+          *ngIf="submitted && getForm.password.errors?.required"
+        >
+        {{getForm.password.errors.message}}
+        </small>
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary submit">Login</button>
+    <div *ngIf="this.showError" class="errorcode">
+      Email or Password incorrect
+    </div>
+  </form>
+</div>

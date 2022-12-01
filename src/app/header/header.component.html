@@ -1,0 +1,25 @@
+<header class="header">
+  <a [routerLink]="['dashboard']">Ito Angular Exercise</a>
+  <div class="header__group">
+    <nav>
+      <a class="nav-item" [routerLink]="['help']">Help</a>
+      <a class="nav-item" [routerLink]="['dashboard']"
+        >Dashboard</a
+      >
+    </nav>
+    <button
+      *ngIf="!isAuth"
+      class="ito-btn ito-btn--primary"
+      [routerLink]="['login']"
+    >
+      Login
+    </button>
+    <button
+      *ngIf="isAuth"
+      class="ito-btn ito-btn--primary"
+      (click)="onLogout()"
+    >
+      Logout
+    </button>
+  </div>
+</header>

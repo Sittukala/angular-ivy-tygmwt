@@ -1,0 +1,66 @@
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content:center;
+  margin: 25px auto;
+  width: auto;
+  
+}
+
+label{
+  color: black;
+  font-weight: 900;
+
+}
+
+input{
+  border-radius: 50px;
+  border: 1px solid #a1d1e9;
+  width: 60%;
+  height: 22px;
+ 
+  padding: 12px;
+  font-size: 16px;
+
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+:-moz-placeholder {
+  text-align: center;
+}
+
+.submit{
+  width: 65%;
+  background-color: #00c2b8 ;
+  border-radius: 50px;
+  height: 30px;
+  color: black;
+  border: 1px solid #00c2b8;
+}
+
+.email{
+  position: relative;
+ 
+}
+
+.password{
+  position: relative;
+
+}
+form{
+  width: 40%;
+}
+form label{
+    text-align: left !important;
+   
+}
+
+.error{
+border: 1px solid rgb(230, 41, 41);
+}
+.errorcode{
+  color: rgb(230, 41, 41);
+  white-space: nowrap;
+}
