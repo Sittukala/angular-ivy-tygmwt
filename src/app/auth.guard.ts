@@ -24,12 +24,12 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> {
     // your code here
     this.authenticationService.isAuthenticated.subscribe((isAuth) => {
-        this.isAuth = isAuth;
-      });
+      this.isAuth = isAuth;
+    });
     if (this.isAuth) {
       return of(true);
     }
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
     return of(false);
   }
 }

@@ -8,28 +8,28 @@ import { first } from 'rxjs/operators';
 })
 export class AuthenticationService {
   private user$ = new BehaviorSubject<User>(null);
-apiSubs: any;
+  apiSubs: any;
 
   constructor(private apiService: ApiService, private router: Router) {}
 
   login(username: string, password: string): Observable<User | null> {
     // your code here
-    let loggedInUser : User = null;
-     this.apiSubs = this.apiService.login(username,password).subscribe(
-      user => { 
-      loggedInUser = user
-      this.user$.next(user)
-    })
-    
+    let loggedInUser: User = null;
+    this.apiSubs = this.apiService
+      .login(username, password)
+      .subscribe((user) => {
+        loggedInUser = user;
+        this.user$.next(user);
+      });
+
     return of(loggedInUser);
-    
   }
 
   getLoginStatus = this.user$.asObservable();
 
   logout(): void {
     this.user$.next(null);
-    this.apiSubs.unsubscribe()
+    this.apiSubs.unsubscribe();
     this.router.navigateByUrl('/login');
   }
 

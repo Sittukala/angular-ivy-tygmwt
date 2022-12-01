@@ -12,19 +12,25 @@ import { CustomValidators } from '../customvalidators';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit , OnDestroy{
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   submitted: boolean = false;
   authSubs: any;
   showError: Boolean = false;
-  error : string; 
+  error: string;
   constructor(
     private authService: AuthenticationService,
     private route: Router
   ) {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.email, CustomValidators.required('This Field is required')]),
-      password: new FormControl('',CustomValidators.required('This Field is required')),
+      email: new FormControl('', [
+        Validators.email,
+        CustomValidators.required('This Field is required'),
+      ]),
+      password: new FormControl(
+        '',
+        CustomValidators.required('This Field is required')
+      ),
     });
   }
 
@@ -38,28 +44,29 @@ export class LoginComponent implements OnInit , OnDestroy{
 
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      this.showError = false
+      this.showError = false;
       this.authSubs = this.authService
         .login(this.loginForm.value.email, this.loginForm.value.password)
         .subscribe({
-          
-          next : (user) => {
-            (user) ? this.route.navigate(['/dashboard'])  : this.showError = true;
-          
+          next: (user) => {
+            user
+              ? this.route.navigate(['/dashboard'])
+              : (this.showError = true);
           },
-          error: (error) => {console.log("error", error) },
-          
-          complete : () => {console.log("completed") },
-          
+          error: (error) => {
+            console.log('error', error);
+          },
+
+          complete: () => {
+            console.log('completed');
+          },
         });
-    
     }
   }
 
-
   ngOnDestroy() {
-    if (this.authSubs != null){
-      this.authSubs.unsubscribe()
+    if (this.authSubs != null) {
+      this.authSubs.unsubscribe();
     }
   }
 }

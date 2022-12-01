@@ -31,13 +31,13 @@
           *ngIf="getForm.email.touched && getForm.email.errors?.email"
         >
           Email address not proper!
-        </small> 
+        </small>
         <small
           class="form-text errorcode"
           *ngIf="submitted && getForm.email.errors?.required"
         >
-        {{getForm.email.errors.message}}
-        </small> 
+          {{ getForm.email.errors.message }}
+        </small>
       </div>
     </div>
     <br />
@@ -59,7 +59,7 @@
           class="form-text errorcode"
           *ngIf="submitted && getForm.password.errors?.required"
         >
-        {{getForm.password.errors.message}}
+          {{ getForm.password.errors.message }}
         </small>
       </div>
     </div>
